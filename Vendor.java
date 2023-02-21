@@ -85,11 +85,12 @@ public class Vendor {
     if (stock >= 1 && deposit >= price) {
       stock--;
       change = deposit - price;
-      totalSales+=price;
+      totalSales+=(double)price/100.0;
       deposit = 0;
       return true;
     } else {
       change = deposit;
+      deposit = 0;
       return false;
     }
   }
